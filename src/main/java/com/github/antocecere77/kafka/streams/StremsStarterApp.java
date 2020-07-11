@@ -43,5 +43,8 @@ public class StremsStarterApp {
         TopologyBuilder builder1;
         KafkaStreams streams = new KafkaStreams(builder, config);
         streams.start();
+
+        //Printed the topology
+        System.out.println(streams.toString());
     }
 }
