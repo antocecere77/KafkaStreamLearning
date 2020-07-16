@@ -12,7 +12,7 @@ import org.apache.kafka.streams.processor.TopologyBuilder;
 import java.util.Arrays;
 import java.util.Properties;
 
-public class StremsStarterApp {
+public class WordCountApp {
 
     public static void main(String[] args) {
         Properties config = new Properties();
