@@ -32,7 +32,8 @@ public class BankBalanceExactlyOnceApp {
         config.put(StreamsConfig.CACHE_MAX_BYTES_BUFFERING_CONFIG, "0");
 
         // Exactly once processing!!
-        config.put(StreamsConfig.PROCESSING_GUARANTEE_CONFIG, StreamsConfig.EXACTLY_ONCE);
+        //NOTE: Don't work on windows
+        //config.put(StreamsConfig.PROCESSING_GUARANTEE_CONFIG, StreamsConfig.EXACTLY_ONCE);
 
         // json Serde
         final Serializer<JsonNode> jsonSerializer = new JsonSerializer();
