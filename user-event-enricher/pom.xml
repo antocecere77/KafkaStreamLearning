@@ -2,36 +2,45 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>streams-starter-project</artifactId>
+        <groupId>com.github.antocecere77.kafka.streams</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.antocecere77.kafka.streams</groupId>
-    <artifactId>streams-starter-project</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>favourite-colour-java</module>
-        <module>bank-balance-exactly-once</module>
-        <module>user-event-enricher</module>
-    </modules>
+    <artifactId>user-event-enricher</artifactId>
 
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka-streams -->
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka-streams</artifactId>
             <version>0.11.0.0</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>1.7.25</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.7.25</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/junit/junit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -47,6 +56,7 @@
                 </configuration>
             </plugin>
 
+
             <!--package as one fat jar-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -59,7 +69,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>com.github.antocecere77.kafka.streams.WordCountApp</mainClass>
+                            <mainClass>com.github.simplesteph.udemy.kafka.streams.UserEventEnricherApp</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -75,5 +85,6 @@
             </plugin>
         </plugins>
     </build>
+
 
 </project>
